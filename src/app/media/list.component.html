@@ -1,0 +1,31 @@
+<div>
+  <label>Medium :</label>
+  <select [(ngModel)]="sortByMedium" >
+    <option selected>ALL</option>
+    <option value="Movies">Movies </option>
+    <option value="Series">Series</option>
+  </select>
+
+  <label>Date:</label>
+  <select [(ngModel)]="sortByDate" >
+    <option selected></option>
+    <option value="Recent">Recent </option>
+    <option value="Oldest">Oldest</option>
+  </select>
+
+
+  <input type="text" [(ngModel)]="name"> 
+  <button (click)="searchName()">Search</button>
+</div>
+
+
+
+<section   *ngFor="let mediaItem of mediaItems|filtering:searchedName:'name'|filtering:searchedMedium:'medium'">
+  <h1><img src="https://img.icons8.com/android/24/000000/restaurant.png"/></h1>
+  <app-item
+
+  [mediaItem]="mediaItem"
+  [ngClass]="{'medium-movies':mediaItem.medium === 'Movies' , 'medium-series':mediaItem.medium === 'Series'}"
+    (delete)="onMediaItemDelete($event)">
+  </app-item>
+</section>

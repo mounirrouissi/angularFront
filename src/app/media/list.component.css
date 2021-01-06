@@ -1,0 +1,16 @@
+
+section {
+  padding-top: 10%;
+  flex: 1;
+  display: inline-flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  background-color: rgb(168, 177, 174);
+}
+div,label{
+  font-family: Georgia, 'Times New Roman', Times, serif, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: rgb(255, 208, 151);
+}
+div{
+  background-color: rgb(255, 208, 151);
+}
