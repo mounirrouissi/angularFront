@@ -1,31 +1,39 @@
+<h1>Filter By:</h1>
+<div class="moved">
+  <label>Status :</label>
+  <select [(ngModel)]="sortByStatus" >
+    <option value='All' selected>All</option>
+    <option value="Available">Available </option>
+    <option value="Saturated">Saturated</option>
+  </select>
+<div class="moved">
+  <label>Name: </label><input type="text" [(ngModel)]="name">
+
+
+  <button (click)="search()" >Search </button>
+</div>
+</div>
 <div>
-  <label>Medium :</label>
-  <select [(ngModel)]="sortByMedium" >
-    <option selected>ALL</option>
-    <option value="Movies">Movies </option>
-    <option value="Series">Series</option>
-  </select>
-
-  <label>Date:</label>
-  <select [(ngModel)]="sortByDate" >
-    <option selected></option>
-    <option value="Recent">Recent </option>
-    <option value="Oldest">Oldest</option>
-  </select>
-
-
-  <input type="text" [(ngModel)]="name"> 
-  <button (click)="searchName()">Search</button>
+  <label></label>
+  <input type="date" [(ngModel)]="todayDate">
 </div>
 
+<section>
+  <a  *ngFor="let restaurant of restaurants|filtering:sortByStatus:'status'|filtering:searchedName:'name'">
 
+     <div class="container">
 
-<section   *ngFor="let mediaItem of mediaItems|filtering:searchedName:'name'|filtering:searchedMedium:'medium'">
-  <h1><img src="https://img.icons8.com/android/24/000000/restaurant.png"/></h1>
-  <app-item
+       <app-menu
+        [restaurant]="restaurant">
+      </app-menu>
 
-  [mediaItem]="mediaItem"
-  [ngClass]="{'medium-movies':mediaItem.medium === 'Movies' , 'medium-series':mediaItem.medium === 'Series'}"
-    (delete)="onMediaItemDelete($event)">
-  </app-item>
+       <app-item
+        [restaurant]="restaurant"
+        [ngClass]="{'medium-movies':restaurant.medium === 'Movies' , 'medium-series':restaurant.medium === 'Series'}"
+          (delete)="onrestaurantDelete($event)">
+        </app-item>
+     </div>
+   </a>
 </section>
+
+ <router-outlet></router-outlet>

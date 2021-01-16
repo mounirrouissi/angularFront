@@ -1,18 +1,27 @@
-import {Component, EventEmitter, Input, Output} from'@angular/core'
+import { Restaurant } from './../pojos/Restaurant';
+import {Component, EventEmitter, Input, OnInit, Output} from'@angular/core'
+import { ApiService } from '../services/api.service';
 
 @Component({
-        selector:"app-item",
+        selector:'app-item',
         templateUrl:'./item.component.html',
         styleUrls: ["./item.component.css"]
 
     })
-export class ItemComponent
+export class ItemComponent implements OnInit
 {
-@Input() mediaItem;
+  restaurants: Restaurant[]=[];
+
+constructor( private service:ApiService){}
+ngOnInit(): void {
+
+}
+ 
+
+@Input() restaurant;
 @Output() delete=new EventEmitter();
-name:String="Cole";
 Delete(){
   alert("YO do you really wanna delete the request ?");
-  this.delete.emit(this.mediaItem);
+  this.delete.emit(this.restaurant);
 }
 }

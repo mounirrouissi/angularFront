@@ -1,14 +1,13 @@
 :host{
   display: flex;
   flex-direction: column;
-  width: 140px;
+  width: 200px;
   height: 200px;
-  border-radius: 50px ;
-  border-style: solid;
-  background-color: #f3ecc7;
+  border-style: groove;
+  background-color: #29394b;
   padding: 10px;
-  color: #bdc2c5;
-  margin: 0 12px 12px 0;
+  color: #e0f2fd;
+  margin: 12px 12px 12px 0;
 }
 
 h2 {
@@ -17,16 +16,16 @@ h2 {
   font-size: 1.6em;
   flex: 1;
 }
-:host(.medium-movies) {
-  border-color: #53ace4;
+:host(.restaurant-movies) {
+  border-color: rgb(13, 28, 37);
 }
-:host(.medium-movies) > h2 {
+:host(.restaurant-movies) > h2 {
   color: #53ace4;
 }
-:host(.medium-series) {
+:host(.restaurant-series) {
   border-color: #45bf94;
 }
-:host(.medium-series) > h2 {
+:host(.restaurant-series) > h2 {
   color: #45bf94;
 }
 .tools {
@@ -38,7 +37,7 @@ h2 {
 .favorite {
   width: 24px;
   height: 24px;
-  fill: #bdc2c5;
+  fill: #17e733;
   cursor: pointer;
 }
 .is-favorite-clicked

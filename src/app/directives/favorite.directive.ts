@@ -3,7 +3,7 @@ import { Directive, HostBinding, HostListener, Input } from '@angular/core';
 @Directive({ selector: '[mwFavorite]' })
 export class favoriteDirective {
 
-  @HostBinding('class.is-favorite') favorite=true;
+  @HostBinding('class.is-saturated') saturated=true;
   @HostBinding("class.is-favorite-hovering") hover=false;
   @HostBinding("class.is-favorite-clicked") clicked=false;
 
@@ -19,7 +19,7 @@ export class favoriteDirective {
   }
 @Input() set mwFavorite(value)
 {
-  this.favorite=value;
+  this.saturated=value;
 }
 
 }
