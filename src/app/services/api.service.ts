@@ -15,12 +15,13 @@ export class ApiService {
    return this.http.delete(this.ALL_RESTAURANTS_URL+"/delete/"+id);
   }
 
-  postFeedback(model: FeedbackViewModel) {
-    throw new Error('Method not implemented.');
+  postFeedback(model: FeedbackViewModel):Observable<any> {
+    return this.http.post<any>(this.ALL_RESTAURANTS_URL+"/feedback",model);
   }
 
   constructor(private http:HttpClient) { }
   getAllRestaurants(): Observable<Restaurant[]> {
     return this.http.get<Restaurant[]>(this.ALL_RESTAURANTS_URL);
   }
+
 }

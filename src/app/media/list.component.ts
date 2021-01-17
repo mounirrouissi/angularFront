@@ -137,7 +137,7 @@ onrestaurantDelete(restaurant:Restaurant) {
         let indexOfRestaurant = this.restaurants.indexOf(restaurant);
         this.restaurants.splice(indexOfRestaurant, 1);
       },
-      err=>{alert("An error has occurred deleting the note"+restaurant.id);}
+      err=>{alert("An error has occurred deleting the note");}
     );
   }
 

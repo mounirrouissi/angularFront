@@ -16,18 +16,18 @@ export class FeedbackComponent implements OnInit {
   constructor(private apiService: ApiService) {
   }
 
-  ngOnInit() {
+ngOnInit() {
   }
 
   sendFeedback(): void {
-    /* this.apiService.postFeedback(this.model).subscribe(
+     this.apiService.postFeedback(this.model).subscribe(
       res => {
         location.reload();
       },
       err => {
         alert("An error has occurred while sending feedback");
       }
-    ); */
+    );
   }}
 
 

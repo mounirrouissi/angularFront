@@ -12,7 +12,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { SortingPipe } from './pipes/sorting.pipe';
 import { FormsModule } from '@angular/forms';
 import { FeedbackComponent } from './feedback/feedback.component';
-import { MenuComponent } from './menu/menu.component';
+import { ReservationComponent } from './reservation/reservation.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -24,7 +24,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   FilterPipe,
   SortingPipe,
   FeedbackComponent,
-  MenuComponent
+ReservationComponent
   ],
   imports: [
     BrowserModule,
