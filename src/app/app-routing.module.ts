@@ -1,3 +1,4 @@
+import { ReservationsComponent } from './reservations/reservations.component';
 import { ListComponent } from './media/list.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { FeedbackComponent } from './feedback/feedback.component';
@@ -7,7 +8,8 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {path:"home",component:ListComponent},
     {path:"feedBack",component:FeedbackComponent},
-  {path:"form/:id",component:ReservationComponent}
+  {path:"reserve/:name",component:ReservationComponent},
+  {path:'reservations',component:ReservationsComponent}
 ];
 
 @NgModule({

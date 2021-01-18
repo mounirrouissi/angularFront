@@ -13,10 +13,10 @@
   <button (click)="search()" >Search </button>
 </div>
 </div>
-<div>
+<!-- <div>
   <label></label>
   <input type="date" [(ngModel)]="todayDate">
-</div>
+</div> -->
 
 <section>
   <a  *ngFor="let restaurant of restaurants|filtering:sortByStatus:'status'|filtering:searchedName:'name'">

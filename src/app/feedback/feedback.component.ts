@@ -7,6 +7,7 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit {
+  message:string='';
   model: FeedbackViewModel = {
     name: '',
     email: '',
@@ -22,6 +23,7 @@ ngOnInit() {
   sendFeedback(): void {
      this.apiService.postFeedback(this.model).subscribe(
       res => {
+this.message="Message Sent Successfuly";
         location.reload();
       },
       err => {

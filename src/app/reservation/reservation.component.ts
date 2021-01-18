@@ -1,6 +1,10 @@
-import { Client } from '../pojos/client';
+
+import { Client } from '../pojos/Client';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ApiService } from '../services/api.service';
+import { Restaurant } from '../pojos/Restaurant';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-reservation',
@@ -8,14 +12,39 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./reservation.component.css']
 })
 export class ReservationComponent implements OnInit {
+  @Input() restaurant;
+  restaurants:Restaurant[]=[];
+name:string="";
+  constructor(private service:ApiService,private route:ActivatedRoute,private location:Location){}
   client: Client = {
     name: '',
     email:'',
-    category: '',
-    places: 0
+   /*  category: '', */
+    places: 0,
+    RestaurantName:''
   };
-
   ngOnInit(): void {
-  }
-reserve(){}
+    this.getAllRestaurants();
+   }
+  public getAllRestaurants() {
+     this.service.getAllRestaurants().subscribe(
+       res=>{this.restaurants=res;},
+       err=>{alert("searching for restaurants")}
+     );
+   }
+reserve():void
+{
+  this.name = this.route.snapshot.params.parameter
+  console.log(this.name);
+  this.service.postReservation(this.name,this.client).subscribe
+(
+res=>{alert("the reservation addded sucessfuly");},
+err=>{alert('"problem occured'+this.name);}
+
+);
+}
+
+goBack(): void {
+  this.location.back();
+}
 }

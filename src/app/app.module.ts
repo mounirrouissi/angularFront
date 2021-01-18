@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ReservationsComponent } from './reservations/reservations.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   FilterPipe,
   SortingPipe,
   FeedbackComponent,
-ReservationComponent
+ReservationComponent,
+ReservationsComponent
   ],
   imports: [
     BrowserModule,
