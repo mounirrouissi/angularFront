@@ -8,7 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {path:"home",component:ListComponent},
     {path:"feedBack",component:FeedbackComponent},
-  {path:"reserve/:name",component:ReservationComponent},
+  {path:"reserve/:id",component:ReservationComponent},
   {path:'reservations',component:ReservationsComponent}
 ];
 

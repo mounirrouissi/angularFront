@@ -34,9 +34,16 @@ name:string="";
    }
 reserve():void
 {
-  this.name = this.route.snapshot.params.parameter
-  console.log(this.name);
-  this.service.postReservation(this.name,this.client).subscribe
+  let id: string = this.route.snapshot.params.id;
+ /*  for(let rest of this.restaurants)
+  {
+if(rest.id === id)
+{
+this.name=rest.name;
+}
+  } */
+  console.log("fdsfdsfdsf"+id);
+  this.service.postReservation(id,this.client).subscribe
 (
 res=>{alert("the reservation addded sucessfuly");},
 err=>{alert('"problem occured'+this.name);}

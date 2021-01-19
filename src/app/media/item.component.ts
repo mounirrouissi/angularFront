@@ -16,12 +16,11 @@ constructor( private service:ApiService){}
 ngOnInit(): void {
 
 }
- 
+
 
 @Input() restaurant;
 @Output() delete=new EventEmitter();
 Delete(){
-  alert("YO do you really wanna delete the request ?");
   this.delete.emit(this.restaurant);
 }
 }
